@@ -1,0 +1,46 @@
+.info-container {
+  max-width: 520px;
+  margin: 30px auto;
+  padding-right: 137px;
+}
+
+.dropdown .btn,
+.dropdown-menu {
+  width: 100%;
+  text-align: center;
+}
+
+.total-amount {
+  margin: 30px 8px 50px;
+  position: relative
+}
+
+.total-number {
+  position: absolute;
+  top: 12px;
+  right: 0px;
+  font-size: 5vh;
+  color: rgb(165, 0, 0)
+}
+
+.item {
+  position: relative
+}
+
+.item:nth-child(even) {
+  background: #EEE
+}
+
+.edit {
+  position: absolute;
+  right: -71px
+}
+
+.delete {
+  position: absolute;
+  right: -127px
+}
+
+.create {
+  margin: 30px 15%;
+}

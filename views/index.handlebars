@@ -1,1 +1,56 @@
-<h1>This is index page</h1>
+<section class="info-container d-flex flex-column mb-3">
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      類別
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#">家居物業</a></li>
+      <li><a class="dropdown-item" href="#">交通出行</a></li>
+      <li><a class="dropdown-item" href="#">休閒娛樂</a></li>
+      <li><a class="dropdown-item" href="#">餐飲食品</a></li>
+      <li><a class="dropdown-item" href="#">其他</a></li>
+    </ul>
+  </div>
+  <div class="total-amount">
+    <div class="total-text">總金額：</div>
+    <div class="total-number">152316</div>
+  </div>
+  <div class=" items-container">
+    {{!-- {{#each}} --}}
+    <div class="item d-flex align-items-center">
+      <i class="fa-solid fa-house p-2"></i>
+      <div class="p-2 flex-grow-1">
+        <div class="item-text">項目</div>
+        <div class="item-date">日期</div>
+      </div>
+      <div class="p-2 ">100</div>
+      <button type="button" class="edit btn btn-success btn-sm">修改</button>
+      <button type="button" class="delete btn btn-danger btn-sm">刪除</button>
+    </div>
+
+    <div class="item d-flex align-items-center">
+      <i class="fa-solid fa-house p-2"></i>
+      <div class="p-2 flex-grow-1">
+        <div class="item-text">項目</div>
+        <div class="item-date">日期</div>
+      </div>
+      <div class="p-2 ">100</div>
+      <button type="button" class="edit btn btn-success btn-sm">修改</button>
+      <button type="button" class="delete btn btn-danger btn-sm">刪除</button>
+    </div>
+
+    <div class="item d-flex align-items-center">
+      <i class="fa-solid fa-house p-2"></i>
+      <div class="p-2 flex-grow-1">
+        <div class="item-text">項目</div>
+        <div class="item-date">日期</div>
+      </div>
+      <div class="p-2 ">100</div>
+      <button type="button" class="edit btn btn-success btn-sm">修改</button>
+      <button type="button" class="delete btn btn-danger btn-sm">刪除</button>
+    </div>
+    {{!-- {{/each}} --}}
+  </div>
+  <button type="button" class="create btn btn-dark">新增支出</button>
+</section>
