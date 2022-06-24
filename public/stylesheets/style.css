@@ -23,11 +23,11 @@
   color: rgb(165, 0, 0)
 }
 
-.item {
+.record {
   position: relative
 }
 
-.item:nth-child(even) {
+.record:nth-child(even) {
   background: #EEE
 }
 

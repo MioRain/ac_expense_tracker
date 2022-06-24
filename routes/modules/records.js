@@ -1,5 +1,5 @@
 const express = require('express')
-const Item = require('../../models/item')
+const Record = require('../../models/record')
 const router = express.Router()
 
 router.get('/new', (req, res) => {
@@ -8,8 +8,8 @@ router.get('/new', (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const item = req.body
-    await Item.create(item)
+    const record = req.body
+    await Record.create(record)
     res.redirect('/')
   }
   catch (err) {
