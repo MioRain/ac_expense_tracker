@@ -1,0 +1,51 @@
+<form class="form-container d-flex flex-column align-items-center" action="/items" method="post">
+
+  <div class="row g-3">
+    <div class="col-auto form-hint">*必填欄位</div>
+    <div class="col-auto form-title">請輸入你的支出</div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-auto">
+      <label for="input-name" class="col-form-label">名稱* ：</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" id="input-name" class="form-control" name="name" required>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-auto">
+      <label for="input-date" class="col-form-label">日期* ：</label>
+    </div>
+    <div class="col-auto">
+      <input type="date" id="input-date" class="form-control" name="date" required>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-auto">
+      <label for="input-category" class="col-form-label">類別* ：</label>
+    </div>
+    <div class="col-auto">
+      <select class="form-select" id="input-category" name="category">
+        <option value="0">家居物業</option>
+        <option value="1">交通出行</option>
+        <option value="3">休閒娛樂</option>
+        <option value="5">餐飲食品</option>
+        <option value="5">其他</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-auto">
+      <label for="input-amount" class="col-form-label">金額* ：</label>
+    </div>
+    <div class="col-auto">
+      <input type="number" id="input-amount" class="form-control" name="amount" required>
+      <button type="submit" class="submit-btn btn btn-dark">新增支出</button>
+    </div>
+  </div>
+
+</form>

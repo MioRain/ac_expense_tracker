@@ -1,4 +1,4 @@
-.info-container {
+.container {
   max-width: 520px;
   margin: 30px auto;
   padding-right: 137px;
@@ -43,4 +43,34 @@
 
 .create {
   margin: 30px 15%;
+}
+
+.form-container {
+  margin: 30px auto;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.form-control,
+.form-select {
+  min-width: 201px;
+}
+
+.form-hint {
+  margin-right: 18px;
+  font-size: 1vh;
+  line-height: 4vh
+}
+
+.form-title {
+  min-width: 201px;
+  font-size: 2.5vh;
+  text-align: center
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 20px;
 }
