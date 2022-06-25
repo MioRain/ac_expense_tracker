@@ -4,6 +4,7 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
+const session = require('express-session')
 const routes = require('./routes')
 
 const app = express()
@@ -18,6 +19,12 @@ app.engine('handlebars', exphbs.engine({
   }
 }))
 app.set('view engine', 'handlebars')
+
+app.use(session({
+  secret: 'ThisIsMySecret',
+  resave: false,
+  saveUninitialized: true
+}))
 
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
