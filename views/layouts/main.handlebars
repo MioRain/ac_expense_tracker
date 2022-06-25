@@ -15,7 +15,12 @@
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid d-flex justify-content-around">
       <a class="navbar-brand" href="/">老爸的私房錢</a>
+      {{#if isAuthenticated}}
+      <a type="button" class="btn btn-primary" href="/users/logout">Logout</a>
+      {{else}}
       <a type="button" class="btn btn-primary" href="/users/login">Login</a>
+      {{/if}}
+
     </div>
   </nav>
 
