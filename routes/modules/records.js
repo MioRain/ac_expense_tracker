@@ -13,8 +13,23 @@ router.get('/:id/edit', async (req, res) => {
     const record = await Record.findById(id).lean()
     const categories = await Category.find().sort({ id: 1 }).lean()
     const recordId = Number(record.categoryId)
-    console.log(recordId)
-    res.render('edit', { record, categories, recordId })
+    res.render('edit', { record, recordId, categories, id })
+  }
+  catch (err) {
+    console.log('catch', err)
+  }
+})
+
+router.put('/:id', async (req, res) => {
+  try {
+    const id = req.params.id
+    const record = req.body
+    const result = await Record.findById(id)
+    Object.keys(record).forEach(async key => {
+      result[key] = record[key]
+    })
+    await result.save()
+    res.redirect('/')
   }
   catch (err) {
     console.log('catch', err)

@@ -1,4 +1,4 @@
-<form class="form-container d-flex flex-column align-items-center" action="/records" method="post">
+<form class="form-container d-flex flex-column align-items-center" action="/records/{{id}}?_method=PUT" method="post">
 
   <div class="row g-3">
     <div class="col-auto form-hint">*必填欄位</div>
@@ -30,7 +30,7 @@
     <div class="col-auto">
       <select class="form-select" id="input-category" name="categoryId" value="{{record.categoryId}}">
         {{#each categories}}
-        <option value="{{id}}" {{checkCategory this.id ../ recordId}}>
+        <option value="{{this.id}}" {{checkCategory this.id ../ recordId}}>
           {{name}}
         </option>
         {{/each}}
