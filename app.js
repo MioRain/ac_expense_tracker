@@ -5,6 +5,7 @@ const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
 const session = require('express-session')
+const usePassport = require('./config/passport')
 const routes = require('./routes')
 
 const app = express()
@@ -19,6 +20,8 @@ app.engine('handlebars', exphbs.engine({
   }
 }))
 app.set('view engine', 'handlebars')
+
+usePassport(app)
 
 app.use(session({
   secret: 'ThisIsMySecret',
