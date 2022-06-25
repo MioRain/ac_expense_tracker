@@ -20,14 +20,13 @@ app.engine('handlebars', exphbs.engine({
   }
 }))
 app.set('view engine', 'handlebars')
-
-usePassport(app)
-
 app.use(session({
   secret: 'ThisIsMySecret',
   resave: false,
   saveUninitialized: true
 }))
+
+usePassport(app)
 
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
