@@ -18,15 +18,15 @@
   </div>
   <div class=" records-container">
     {{#each records}}
-    <form action="/records/{{ _id }}?_method=DELETE" method="POST">
+    <form action="/records/{{ this._id }}?_method=DELETE" method="POST">
       <div class="record d-flex align-items-center">
-        <i class="{{icon}}"></i>
+        <i class="{{this.icon}}"></i>
         <div class="p-2 flex-grow-1">
-          <div class="record-text">{{name}}</div>
-          <div class="record-date">{{date}}</div>
+          <div class="record-text">{{this.name}}</div>
+          <div class="record-date">{{this.date}}</div>
         </div>
-        <div class="p-2 ">{{amount}}</div>
-        <a class="edit btn btn-success btn-sm" href="/records/{{_id}}/edit">修改</a>
+        <div class="p-2 ">{{this.amount}}</div>
+        <a class="edit btn btn-success btn-sm" href="/records/{{this._id}}/edit">修改</a>
         <button type="submit" class="delete btn btn-danger btn-sm">刪除</button>
     </form>
   </div>

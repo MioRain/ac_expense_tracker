@@ -10,11 +10,11 @@ router.get('/new', (req, res) => {
 router.get('/:id/edit', async (req, res) => {
   try {
     const userId = req.user._id
-    const id = req.params.id
-    const record = await Record.findOne({ userId, id }).lean()
+    const _id = req.params.id
+    const record = await Record.findOne({ userId, _id }).lean()
     const categories = await Category.find().sort({ id: 1 }).lean()
     const recordId = Number(record.categoryId)
-    res.render('edit', { record, recordId, categories, id })
+    res.render('edit', { record, recordId, categories, _id })
   }
   catch (err) {
     console.log('catch', err)
@@ -24,9 +24,9 @@ router.get('/:id/edit', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const userId = req.user._id
-    const id = req.params.id
+    const _id = req.params.id
     const record = req.body
-    const result = await Record.findOne({ userId, id })
+    const result = await Record.findOne({ userId, _id })
     Object.keys(record).forEach(async key => {
       result[key] = record[key]
     })
@@ -41,8 +41,8 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const userId = req.user._id
-    const id = req.params.id
-    const result = await Record.findOne({ userId, id })
+    const _id = req.params.id
+    const result = await Record.findOne({ userId, _id })
     await result.remove()
     res.redirect('/')
   }
