@@ -9,8 +9,9 @@ router.get('/new', (req, res) => {
 
 router.get('/:id/edit', async (req, res) => {
   try {
+    const userId = req.user._id
     const id = req.params.id
-    const record = await Record.findById(id).lean()
+    const record = await Record.findOne({ userId, id }).lean()
     const categories = await Category.find().sort({ id: 1 }).lean()
     const recordId = Number(record.categoryId)
     res.render('edit', { record, recordId, categories, id })
@@ -22,9 +23,10 @@ router.get('/:id/edit', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   try {
+    const userId = req.user._id
     const id = req.params.id
     const record = req.body
-    const result = await Record.findById(id)
+    const result = await Record.findOne({ userId, id })
     Object.keys(record).forEach(async key => {
       result[key] = record[key]
     })
@@ -38,8 +40,9 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
+    const userId = req.user._id
     const id = req.params.id
-    const result = await Record.findById(id)
+    const result = await Record.findOne({ userId, id })
     await result.remove()
     res.redirect('/')
   }
@@ -51,6 +54,7 @@ router.delete('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const record = req.body
+    record.userId = req.user._id
     await Record.create(record)
     res.redirect('/')
   }

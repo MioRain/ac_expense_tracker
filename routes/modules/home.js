@@ -5,7 +5,8 @@ const router = express.Router()
 
 router.get('/', async (req, res) => {
   try {
-    const records = await Record.find().lean()
+    const userId = req.user._id
+    const records = await Record.find({ userId }).lean()
     const categories = await Category.find().lean()
     let totalAmount = 0
 
