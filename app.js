@@ -9,7 +9,14 @@ const routes = require('./routes')
 const app = express()
 const port = 3000
 
-app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }))
+app.engine('handlebars', exphbs.engine({
+  defaultLayout: 'main',
+  helpers: {
+    checkCategory: function (id, checkId) {
+      if (id === checkId) return 'selected'
+    }
+  }
+}))
 app.set('view engine', 'handlebars')
 
 app.use(express.static('public'))
