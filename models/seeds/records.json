@@ -1,0 +1,26 @@
+[
+  {
+    "name": "雞排",
+    "date": "2022-06-04",
+    "categoryId": 4,
+    "amount": 70
+  },
+  {
+    "name": "珍奶",
+    "date": "2022-06-04",
+    "categoryId": 4,
+    "amount": 50
+  },
+  {
+    "name": "繳房租",
+    "date": "2022-06-06",
+    "categoryId": 1,
+    "amount": 13000
+  },
+  {
+    "name": "裝冷氣",
+    "date": "2022-06-22",
+    "categoryId": 5,
+    "amount": 3500
+  }
+]

@@ -25,7 +25,7 @@ const SEED_CATEGORIES = [
   {
     id: 5,
     name: '其他',
-    icon: 'fa-solid fa-pen>'
+    icon: 'fa-solid fa-pen'
   }
 ]
 
