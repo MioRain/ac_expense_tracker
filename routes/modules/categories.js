@@ -3,9 +3,10 @@ const Record = require('../../models/record')
 const Category = require('../../models/category')
 const router = express.Router()
 
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    const records = await Record.find().lean()
+    const id = req.params.id
+    const records = await Record.find({ categoryId: id }).lean()
     const categories = await Category.find().lean()
     let totalAmount = 0
 
