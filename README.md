@@ -2,9 +2,7 @@
 
 極簡記帳app
 
-<img src="public/images/001.png" alt="drawing" width="300px"/>
-<img src="public/images/002.png" alt="drawing" width="300px"/>
-<img src="public/images/003.png" alt="drawing" width="300px"/>
+<img src="public/images/001.png" alt="drawing" width="300px"/><img src="public/images/002.png" alt="drawing" width="300px"/><img src="public/images/003.png" alt="drawing" width="300px"/>
 
 ## 功能說明
 
@@ -31,7 +29,7 @@ git clone https://github.com/MioRain/ac_expense_tracker.git
 ```
 2. 進入專案資料夾並載入相關套件
 ```
-cd ac_expense_tracker & npm install
+cd ac_expense_tracker && npm install
 ```
 2. 根據 .env.example 創建 .env 檔案並替換內容
 MONGODB_URI = mongodb+srv://`id:password`@cluster0.un1ij.mongodb.net/restaurant-list?retryWrites=true&w=majority
