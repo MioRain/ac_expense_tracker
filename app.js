@@ -1,4 +1,6 @@
-require('dotenv').config()
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 require('./config/mongoose')
 const express = require('express')
 const exphbs = require('express-handlebars')
@@ -22,7 +24,7 @@ app.engine('handlebars', exphbs.engine({
 }))
 app.set('view engine', 'handlebars')
 app.use(session({
-  secret: 'ThisIsMySecret',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }))
