@@ -36,6 +36,18 @@ router.put('/:id', async (req, res) => {
   }
 })
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const id = req.params.id
+    const result = await Record.findById(id)
+    await result.remove()
+    res.redirect('/')
+  }
+  catch (err) {
+    console.log('catch', err)
+  }
+})
+
 router.post('/', async (req, res) => {
   try {
     const record = req.body
